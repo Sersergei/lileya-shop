@@ -1,0 +1,7 @@
+{% extends "ShopLileyaBundle::layout.html.twig"%}
+{% block title %} Додати коментар {% endblock %}
+{% block content %}
+    <h1> Додати коментар до товару"{{comment.product.title}}"</h1>
+    {% include 'ShopLileyaBundle:Comment:form.html.twig' with {'form':form} %}
+    {% endblock%}
+    

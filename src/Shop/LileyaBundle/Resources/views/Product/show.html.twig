@@ -1,0 +1,76 @@
+{% extends "ShopLileyaBundle::layout.html.twig" %}
+{% block stylesheets %}
+    {{parent()}}
+    <link href="{{asset('bundles/ShopLileya/css/jqzoom.css')}}" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="{{asset('bundles/ShopLileya/js/jquery.js')}}"></script>
+<script type="text/javascript" src="{{asset('bundles/ShopLileya/js/jquery.jqzoom.js')}}"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+jQuery(document).ready(function(){
+$("img.jqzoom").jqueryzoom({
+				xzoom: 500, //ширина окна просмотра зума (200 по умолчанию)
+				yzoom: 500, //высота окна просмотра зума (200 по умолчанию)
+				offset: 7 //отступ от картинки (10 по умолчанию)
+				//position: "right" //позиция окна зума ("right" - по умолчанию)
+			});
+});
+</script>
+   {% endblock %}
+{% block title %}{{product.title}}{%endblock%}
+{% block content %}
+	<div id="fotoslide"><span class="tozoom"><img src="{{asset(['images/',product.image]|join)}}" class="jqzoom" alt="{{asset(['images/',product.image]|join)}}" class="large" /></span></div>
+	<div id="describe"> 
+	<h3>{{product.title}}</h3>
+	<p><strong>Cтиль:</strong> Сексуальний<br>
+	  {{product.describes}}
+
+	   </p>
+	
+	 <form name="test" method="post" action="#">
+	  
+	  <p><label><strong>Колір:<label><strong><Br>
+		<input type="radio" name="obiem" value="White">Білий<Br>
+		<input type="radio" name="obiem" value="Black">Чорний<Br>
+		<input type="radio" name="obiem" value="Grey">Сірий<Br>
+        </label>
+	  </p>
+	  
+	
+	  
+ 	  <p><label><strong>Об'єм:<label><strong><Br>
+		<input type="radio" name="obiem" value="70">70<Br>
+		<input type="radio" name="obiem" value="75">75<Br>
+		<input type="radio" name="obiem" value="80">80<Br>
+		<input type="radio" name="obiem" value="85">85</br>
+		<input type="radio" name="obiem" value="90">90</br>
+        </label>
+	  </p>
+  
+ 	   <p><strong>Чашка:<label><strong><Br>
+		<input type="radio" name="obiem" value="A">A<Br>
+		<input type="radio" name="obiem" value="B">B<Br>
+		<input type="radio" name="obiem" value="C">C<Br>
+		<input type="radio" name="obiem" value="D">D<Br>
+		<input type="radio" name="obiem" value="E">E<Br>
+        </label>
+	   </p>
+	   <p><label><strong>Ціна</strong></label>{{product.price}}<label><strong>грн.</strong></label></p>
+	    <p><label><strong>Кількість:<label><strong> <input id="inputsize" type="number" min="1" value="0">&nbsp <a href="#"><button>Купити</button></a></p>
+ </form>
+ <a href="#">Таблиця розмірів</a> 
+ 
+ </div>
+<div class="clear"> </div>
+ {%endblock%}
+ {% block comment %}
+<div id="comentarii">
+        
+                <h3>Коментар</h3>
+                {% include 'ShopLileyaBundle:Comment:index.html.twig' with {'comments': comments} %}
+                <h3>Додати коментар</h3>
+                {% render(controller( 'ShopLileyaBundle:Comment:new', {'product_id': product.id})) %}
+           
+</div>
+{%endblock%}
+            
+    

@@ -1,0 +1,7 @@
+<form action="{{ path('ShopLileyaBundle_comment_create', {'product_id': comment.product.id})}}"
+      method="post"{{form_enctype(form)}} class="blogger">
+    {{form_widget(form)}}
+    <p>
+        <input type="submit" value="Выдправить"
+    </p>
+</form>

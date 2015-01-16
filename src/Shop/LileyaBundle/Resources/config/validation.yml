@@ -1,0 +1,4 @@
+Shop\LileyaBundle\Entity\Product:
+    properties:
+        file:
+            - Image: ~
