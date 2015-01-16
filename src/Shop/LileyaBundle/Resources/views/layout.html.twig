@@ -1,19 +1,19 @@
 {% extends "::base.html.twig"%}
 {% block stylesheets %}
     {{parent()}}
-    <link href="{{asset('bundles/shoplileya/css/blog.css')}}" type="text/css" rel="stylesheet" />
+    <link href="{{asset('bundles/Shopblog/css/blog.css')}}" type="text/css" rel="stylesheet" />
    {% endblock %}
     
 {% block menu %}
 <ul id="menu">
      
-    <li><a href="" class="drop">Головна</a><!-- Begin Home Item -->
+    <li><a href="{{path('ShopLileyaBundle_homepage')}}" class="drop">Головна</a><!-- Begin Home Item -->
      
      
     </li><!-- End Home Item -->
  
     <!-- End 5 columns Item -->
- <li><a href="" class="drop">Нижня білизна</a><!-- Begin 4 columns Item -->
+ <li><a href="{{path('ShopLileyaBundle_product',{ 'category': 'nignya_bіlizna' })}}" class="drop">Нижня білизна</a><!-- Begin 4 columns Item -->
      
         <div class="dropdown_4columns"><!-- Begin 4 columns container -->
             <div class="col_1">
@@ -80,7 +80,7 @@
 	
 	
 	
-		<li class="menu_right"><a href="" class="drop">Одяг для сну</a>
+		<li class="menu_right"><a href="{{path('ShopLileyaBundle_product',{ 'category': 'odyag_dlya_snu' })}}" class="drop">Одяг для сну</a>
      
         <div class="dropdown_1column align_right">
          
@@ -103,7 +103,7 @@
 	
 	
 
-		<li class="menu_right"><a href="" class="drop">Купальники</a>
+		<li class="menu_right"><a href="{{path('ShopLileyaBundle_product',{ 'category': 'kupalniki' })}}" class="drop">Купальники</a>
      
         <div class="dropdown_1column align_right">
          
@@ -129,7 +129,7 @@
 	
 	
 	
-	<li><a href="" class="drop">Ігрові костюми</a><!-- Begin 4 columns Item -->
+	<li><a href="{{path('ShopLileyaBundle_product',{ 'category': 'Іgrovі_kostyumi' })}}" class="drop">Ігрові костюми</a><!-- Begin 4 columns Item -->
      
         <div class="dropdown_4columns"><!-- Begin 4 columns container -->
          

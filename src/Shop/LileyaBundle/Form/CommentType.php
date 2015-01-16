@@ -1,6 +1,6 @@
 <?php
 
-namespace Blogger\BlogBundle\Form;
+namespace Shop\LileyaBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -27,7 +27,7 @@ class CommentType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Blogger\BlogBundle\Entity\Comment'
+            'data_class' => 'Shop\LileyaBundle\Entity\Comment'
         ));
     }
 
@@ -36,6 +36,6 @@ class CommentType extends AbstractType
      */
     public function getName()
     {
-        return 'blogger_blogbundle_comment';
+        return 'Shop_LileyaBundle_comment';
     }
 }

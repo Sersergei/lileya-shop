@@ -1,15 +1,33 @@
-shop_lileya_homepage:
-    path:     /
-    defaults: { _controller: ShopLileyaBundle:Page:index }
+ShopLileyaBundle_homepage:
+   pattern: /
+   defaults: { _controller: ShopLileyaBundle:Page:index }
+   requirements:
+       _method: GET
+ShopLileyaBundle_contact:
+   pattern: /contact
+   defaults: { _controller: ShopLileyaBundle:Page:contact }
+   requirements:
+       _method: GET|POST
+ShopLileyaBundle_product_show:
+    pattern: /product/show/{id}
+    defaults: {_controller:ShopLileyaBundle:Product:show}
     requirements:
-        _method:  GET
-shop_lileya_about:
-    pattern:  /about
-    defaults: { _controller: ShopLileyaBundle:Page:about }
+        _methd: GET
+        id: \d+
+ShopLileyaBundle_product:
+    pattern: /product/{category}/{subcategory}/{style}
+    defaults: {_controller:ShopLileyaBundle:Product:index, category :NULL, subcategory:NULL, style:NULL}
     requirements:
-        _method:  GET
-shop_lileya_contact:
-    pattern:  /contact
-    defaults: { _controller: ShopLileyaBundle:Page:contact }
+        _methd: GET
+        
+ShopLileyaBundle_comment_create:
+    pattern: /comment/{product_id}
+    defaults: {_controller:ShopLileyaBundle:Comment:create}
     requirements:
-        _method:  GET|POST
+        _metod: POST
+        blog_id: \d+
+login:
+    pattern:   /login
+    defaults:  { _controller: ShopLileyaBundle:Security:login }
+login_check:
+    pattern:   /login_check

@@ -18,13 +18,13 @@ class PageController extends Controller{
             $form->bind($request);
                 if($form->isValid()){
                     $message=\Swift_Message::newInstance()
-                            ->setSubject('Інтернет магазин Біла лілея')
+                            ->setSubject('Інтернет магазин Біла конвалія')
                             ->setFrom('sersergei83@gmail.com')
                             ->setTo('kseniya.kuzmenko@ukr.net')
-                            ->setBody($this->renderView('ShopLileyagBundle:Page:contactEmail.txt.twig',array('enquiry'=>$enquiry)));
+                            ->setBody($this->renderView('ShopLileyaBundle:Page:contactEmail.txt.twig',array('enquiry'=>$enquiry)));
                     $this->get('mailer')->send($message);
                     $this->get('session')->getFlashBag()->add(
-                            'blogger-notice',
+                            'Shop-notice',
                             'Ваше повідомлення відправлене, Дякуємо!'
                             );
                     return $this->redirect($this->generateUrl('ShopLileyaBundle_contact'));
@@ -33,9 +33,5 @@ class PageController extends Controller{
         return $this->render('ShopLileyaBundle:Page:contact.html.twig',array(
             'form'=>$form->createView()
         ));
-    }
-    public function aboutAction()
-    {
-        return $this->render('ShopLileyaBundle:Page:about.html.twig');
     }
 }
