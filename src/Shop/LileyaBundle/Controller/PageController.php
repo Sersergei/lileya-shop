@@ -3,6 +3,9 @@ namespace Shop\LileyaBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Shop\LileyaBundle\Entity\Enquiry;
 use Shop\LileyaBundle\Form\EnquiryType;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Request;
+use PhpBridgeSessionStorage;
 class PageController extends Controller{
     public function indexAction()
     {
@@ -10,6 +13,7 @@ class PageController extends Controller{
         return $this->render('ShopLileyaBundle:Page:index.html.twig');
     }
     public function contactAction(){
+        
         //функция контакта
         $enquiry=new Enquiry();
         $form = $this->createForm(new EnquiryType(),$enquiry);

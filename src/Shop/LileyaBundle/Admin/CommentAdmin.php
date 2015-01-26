@@ -1,5 +1,5 @@
 <?php
-namespace Blogger\BlogBundle\Admin;
+namespace Shop\LileyaBundle\Admin;
  
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -9,7 +9,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\CoreBundle\Form\Type;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-use Blogger\BlogBundle\Entity\Comment;
+use Shop\LileyaBundle\Entity\Comment;
  
 class CommentAdmin extends Admin
 {

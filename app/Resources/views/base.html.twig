@@ -10,7 +10,11 @@
 </head>
 <body>
  <div id = "wrapper">
-    <div id = "header"></div>
+    <div id = "header">
+    {% block corf %}
+    {% endblock %}
+    
+    </div>
     {% block menu %}
  {%endblock%}
        <div id = "content">
