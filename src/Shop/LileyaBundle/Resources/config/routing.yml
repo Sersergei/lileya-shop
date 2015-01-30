@@ -26,6 +26,12 @@ ShopLileyaBundle_comment_create:
     requirements:
         _metod: POST
         blog_id: \d+
+ShopLileyaBundle_corf_add:
+    pattern: /corf/add
+    defaults: {_controller:ShopLileyaBundle:Corf:add}
+    requirements:
+        _metod: GET|POST
+       
 login:
     pattern:   /login
     defaults:  { _controller: ShopLileyaBundle:Security:login }

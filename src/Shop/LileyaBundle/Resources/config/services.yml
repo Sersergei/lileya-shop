@@ -1,1 +1,39 @@
-parameters:#    Shop_blog.example.class: Shop\LileyaBundle\Exampleservices:    Shop.symblog.admin:        class: Shop\LileyaBundle\Admin\ProductAdmin        tags:            - { name: sonata.admin, manager_type: orm, group: Магазин, label: Товары }        arguments: [null, Shop\LileyaBundle\Entity\Product, ShopLileyaBundle:ProductAdmin]            Shop.symblog.admin.category:        class: Shop\LileyaBundle\Admin\CategoryAdmin        tags:            - { name: sonata.admin, manager_type: orm, group: Настройка, label: Категории }        arguments: [null, Shop\LileyaBundle\Entity\Category, ShopLileyaBundle:CategoryAdmin]    Shop.symblog.admin.subcategory:        class: Shop\LileyaBundle\Admin\SubcategoryAdmin        tags:            - { name: sonata.admin, manager_type: orm, group: Настройка, label: Подкатегории }        arguments: [null, Shop\LileyaBundle\Entity\Subcategory, ShopLileyaBundle:SubcategoryAdmin]    Shop.symblog.admin.sklad:        class: Shop\LileyaBundle\Admin\SkladAdmin        tags:            - { name: sonata.admin, manager_type: orm, group: Настройка, label: Склад }        arguments: [null, Shop\LileyaBundle\Entity\Sklad, ShopLileyaBundle:SkladAdmin]          Shop.symblog.admin.Style:        class: Shop\LileyaBundle\Admin\StyleAdmin        tags:            - { name: sonata.admin, manager_type: orm, group: Настройка, label: Стили }        arguments: [null, Shop\LileyaBundle\Entity\Style, ShopLileyaBundle:StyleAdmin]         Shop.symblog.admin.comment:        class: Shop\LileyaBundle\Admin\CommentAdmin        tags:            - { name: sonata.admin, manager_type: orm, group: Коментарий, label: Коментарии}        arguments: [null, Shop\LileyaBundle\Entity\Comment, ShopLileyaBundle:CommentAdmin]
+parameters:
+#    Shop_blog.example.class: Shop\LileyaBundle\Example
+
+services:
+    Shop.symblog.admin:
+        class: Shop\LileyaBundle\Admin\ProductAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Магазин, label: Товары }
+        arguments: [null, Shop\LileyaBundle\Entity\Product, ShopLileyaBundle:ProductAdmin]
+        
+    Shop.symblog.admin.category:
+        class: Shop\LileyaBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Настройка, label: Категории }
+        arguments: [null, Shop\LileyaBundle\Entity\Category, ShopLileyaBundle:CategoryAdmin]
+    Shop.symblog.admin.subcategory:
+        class: Shop\LileyaBundle\Admin\SubcategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Настройка, label: Подкатегории }
+        arguments: [null, Shop\LileyaBundle\Entity\Subcategory, ShopLileyaBundle:SubcategoryAdmin]
+
+    Shop.symblog.admin.sklad:
+        class: Shop\LileyaBundle\Admin\SkladAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Настройка, label: Склад }
+        arguments: [null, Shop\LileyaBundle\Entity\Sklad, ShopLileyaBundle:SkladAdmin]
+      
+    Shop.symblog.admin.Style:
+        class: Shop\LileyaBundle\Admin\StyleAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Настройка, label: Стили }
+        arguments: [null, Shop\LileyaBundle\Entity\Style, ShopLileyaBundle:StyleAdmin]
+    
+ 
+    Shop.symblog.admin.comment:
+        class: Shop\LileyaBundle\Admin\CommentAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Коментарий, label: Коментарии}
+        arguments: [null, Shop\LileyaBundle\Entity\Comment, ShopLileyaBundle:CommentAdmin]
