@@ -19,15 +19,31 @@ class CorfController extends Controller{
        $session = new Session();
        $sum=$session->get('sum');
        $coun=$session->get('coun');
+       $product=$session->get('product');
+       if (!empty($product[$id])){//провер€ем есть ли такой товар в корзине
+        $product[$id]['coun']+=$count;//добавл€ем количество товара
+       }
+       else{
+        $product[$id]['color']=$color;
+        $product[$id]['obem']=$obem;
+        $product[$id]['chashka']=$chashka;
+        $product[$id]['price']=$price;
+        $product[$id]['coun']=$count;
+       }
        //вычисл€ем количество товаров в и сумму в корзине
        $sum=$sum+($price*$count);
        $coun=$coun+$count;
        //«аписываем переменные в сесию
        $session->set('sum',$sum);
        $session->set('coun',$coun);
+       $session->set('product',$product);
         $data = json_encode( array('sum'=>$sum,'coun'=>$coun) );
         $headers = array( 'Content-type' => 'application-json; charset=utf8' );
         $responce = new Response( $data, 200, $headers );
         return $responce;
+    }
+    public function viewAction(){
+            return $this->render('ShopLileyaBundle:Corf:show.html.twig', array(
+            'product' => $product));
     }
     }
