@@ -1,0 +1,28 @@
+{% extends "ShopLileyaBundle::layout.html.twig" %}
+{% block title %}{%endblock%}
+{% block content %}
+<table>
+    <tr>
+        <td>Колір</td>
+        <td>Об`єм</td>
+        <td>Чашка</td>
+        <td>Кількість</td>
+        <td>Ціна</td>
+        <td>Сума</td>
+    
+    </tr>
+{% for product in product %}
+     <tr>
+    <td>{{ product.color}}</td>
+    <td>{{ product.obem}}</td>
+    <td>{{ product.chashka}}</td>
+    <td>{{ product.coun}}</td>
+    <td>{{ product.price}}</td>
+    <td>{{ product.price*product.coun}}</td>
+    </tr>
+    {% else %}
+    <p>Ваша корзина порожня. Виберіть товар для здійснення покупки</p>
+    
+  {% endfor %}
+</table>
+{%endblock%}

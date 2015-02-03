@@ -29,6 +29,7 @@ class CorfController extends Controller{
         $product[$id]['chashka']=$chashka;
         $product[$id]['price']=$price;
         $product[$id]['coun']=$count;
+        var_dump($product);
        }
        //вычисляем количество товаров в и сумму в корзине
        $sum=$sum+($price*$count);
@@ -43,6 +44,8 @@ class CorfController extends Controller{
         return $responce;
     }
     public function viewAction(){
+        $session = new Session();
+        $product=$session->get('product');
             return $this->render('ShopLileyaBundle:Corf:show.html.twig', array(
             'product' => $product));
     }
