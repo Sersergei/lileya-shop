@@ -24,4 +24,11 @@ class ProductRepository extends EntityRepository
             ->setParameter('subcategory_id',$subcategory);
         return $qp->getQuery()->getResult();
     }
+    public function getProducts($product_id){
+     $qp=  $this->createQueryBuilder('p')
+                ->select('p');
+     $qp->where('p.category IN (:product_id)')
+            ->setParameter('product_id',$product_id);
+        return $qp->getQuery()->getResult();
+    }
 }

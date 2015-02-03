@@ -1,0 +1,45 @@
+{% extends "ShopLileyaBundle::layout.html.twig" %}
+{% block stylesheets %}
+    {{parent()}}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{{asset('bundles/ShopLileya/js/coun_summ.js')}}"></script>
+   {% endblock %}
+{% block title %}{%endblock%}
+{% block content %}
+{% if app.session.get('product')%}
+<form>
+<table>
+    <tr>
+        <td>Артикул</td>
+        <td>Назва</td>
+        <td>Колір</td>
+        <td>Об`єм</td>
+        <td>Чашка</td>
+        <td>Кількість</td>
+        <td>Ціна</td>
+        <td>Сума</td>
+        <td>Вилучити</td>
+    
+    </tr>
+{% for product in products %}
+     <tr>
+     <td>{{ product.id}}</td>
+    <td><a href="{{path('ShopLileyaBundle_product_show',{'id': product.id})}}">{{ product.title}}</a></td>
+    <td>{{ prod[product.id]['color'] }} </td>
+    <td>{{ prod[product.id]['obem'] }}</td>
+    <td>{{ prod[product.id]['chashka'] }}</td>
+    <td> <input id="inputsize" name="count" type="number" min="1" value="{{ prod[product.id]['coun'] }}"/></td>
+    <td class="price">{{ product.price}}</td>
+    <td id="summ">{{ product.price * prod[product.id]['coun']}}</td>
+    <td><button>Вилучити</button> </td>
+    </tr>
+    
+    
+  {% endfor %}
+</table>
+</form>
+{% else %}
+<p>Ваша корзина порожня. Виберіть товар для здійснення покупки</p>
+{% endif %}
+
+{%endblock%}

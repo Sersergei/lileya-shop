@@ -31,7 +31,11 @@ ShopLileyaBundle_corf_add:
     defaults: {_controller:ShopLileyaBundle:Corf:add}
     requirements:
         _metod: GET|POST
-       
+ShopLileyaBundle_corf_view:
+    pattern: /corf/view
+    defaults: {_controller:ShopLileyaBundle:Corf:view}
+    requirements:
+        _metod: GET|POST
 login:
     pattern:   /login
     defaults:  { _controller: ShopLileyaBundle:Security:login }
