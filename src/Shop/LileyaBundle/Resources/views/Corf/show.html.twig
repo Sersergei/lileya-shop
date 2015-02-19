@@ -1,4 +1,5 @@
 {% extends "ShopLileyaBundle::layout.html.twig" %}
+<<<<<<< HEAD
 {% block stylesheets %}
     {{parent()}}
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -12,12 +13,19 @@
     <tr>
         <td>Артикул</td>
         <td>Назва</td>
+=======
+{% block title %}{%endblock%}
+{% block content %}
+<table>
+    <tr>
+>>>>>>> 86798453b7d66ff8e6763ef45d1cf6d38936ea51
         <td>Колір</td>
         <td>Об`єм</td>
         <td>Чашка</td>
         <td>Кількість</td>
         <td>Ціна</td>
         <td>Сума</td>
+<<<<<<< HEAD
         <td>Вилучити</td>
     
     </tr>
@@ -42,4 +50,22 @@
 <p>Ваша корзина порожня. Виберіть товар для здійснення покупки</p>
 {% endif %}
 
+=======
+    
+    </tr>
+{% for product in product %}
+     <tr>
+    <td>{{ product.color}}</td>
+    <td>{{ product.obem}}</td>
+    <td>{{ product.chashka}}</td>
+    <td>{{ product.coun}}</td>
+    <td>{{ product.price}}</td>
+    <td>{{ product.price*product.coun}}</td>
+    </tr>
+    {% else %}
+    <p>Ваша корзина порожня. Виберіть товар для здійснення покупки</p>
+    
+  {% endfor %}
+</table>
+>>>>>>> 86798453b7d66ff8e6763ef45d1cf6d38936ea51
 {%endblock%}

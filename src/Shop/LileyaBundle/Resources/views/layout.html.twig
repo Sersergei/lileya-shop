@@ -9,11 +9,7 @@
     {% if app.session.get('product')%}
     В <a href="{{path('ShopLileyaBundle_corf_view')}}">корзине</a><span id="count">{{ app.session.get('coun')}}</span> товар(а)<br />
     На сумму <span id="sum">
-    
-
-    {{ app.session.get('sum') }}
-
-
+   {{ app.session.get('sum') }}
 </span>грн.
 {% else %}
 В вашей корзине пока нету товаров

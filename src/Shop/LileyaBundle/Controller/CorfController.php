@@ -25,12 +25,7 @@ class CorfController extends Controller{
             $product[$id]['coun']+=$count;//добавляем количество товара
        }
        else{
-            $product[$id]['color']=$color;
-            $product[$id]['obem']=$obem;
-            $product[$id]['chashka']=$chashka;
-            $product[$id]['price']=$price;
-            $product[$id]['coun']=$count;
-        }
+
        //вычисляем количество товаров в и сумму в корзине
        $sum=$sum+($price*$count);
        $coun=$coun+$count;
@@ -43,16 +38,10 @@ class CorfController extends Controller{
         $responce = new Response( $data, 200, $headers );
         return $responce;
     }
+    }
     public function viewAction(){
         $session = new Session();
-        $prod=$session->get('product');
-        $product_id=array_keys($prod);
-        if(count($product_id)>1){
-        $product_id=implode($product_id, ', ');}
-        $em=  $this->getDoctrine()->getManager();
-        $products=$em->getRepository('ShopLileyaBundle:Product')
-                     ->getProducts($product_id);
-      
+
             return $this->render('ShopLileyaBundle:Corf:show.html.twig', array(
             'products' => $products,
             'prod'=>$prod));
