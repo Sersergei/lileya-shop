@@ -2,13 +2,22 @@
 {% block title %}Контакты {% endblock %}
 {% block content %}
     <h1>Контакти інтернет магазину спідньої білизни</h1>
+<<<<<<< HEAD
     {% for flashMessage in app.session.flashbag.get('Shop-notice')%}
         <div class="Shop-notice">
+=======
+    {% for flashMessage in app.session.flashbag.get('blogger-notice')%}
+        <div class="Blogger-notice">
+>>>>>>> 1
             {{ flashMessage }}
         </div>
         {%endfor%}
     <p>Щоб знами звязатись, заповніть ,будьласка, форму: </p>
+<<<<<<< HEAD
     <form action="{{path('ShopLileyaBundle_contact')}}" method="post"{{form_enctype(form)}} class="Shop">
+=======
+    <form action="{{path('shop_lileya_contact')}}" method="post"{{form_enctype(form)}} class="blogger">
+>>>>>>> 1
         {{form_errors(form)}}
         
         {{form_row(form.name)}}

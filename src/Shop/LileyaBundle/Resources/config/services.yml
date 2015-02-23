@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 parameters:
 #    Shop_blog.example.class: Shop\LileyaBundle\Example
 
@@ -37,3 +38,9 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: Коментарий, label: Коментарии}
         arguments: [null, Shop\LileyaBundle\Entity\Comment, ShopLileyaBundle:CommentAdmin]
+=======
+services:
+#    shop_lileya.example:
+#        class: Shop\LileyaBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+>>>>>>> 1

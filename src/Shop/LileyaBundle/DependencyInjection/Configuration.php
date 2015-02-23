@@ -13,12 +13,20 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
     /**
+<<<<<<< HEAD
      * {@inheritDoc}
+=======
+     * {@inheritdoc}
+>>>>>>> 1
      */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
+<<<<<<< HEAD
         $rootNode = $treeBuilder->root('Shop_blog');
+=======
+        $rootNode = $treeBuilder->root('shop_lileya');
+>>>>>>> 1
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
