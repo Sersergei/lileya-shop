@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ShopLileyaBundle_homepage:
    pattern: /
    defaults: { _controller: ShopLileyaBundle:Page:index }
@@ -42,20 +41,3 @@ login:
     defaults:  { _controller: ShopLileyaBundle:Security:login }
 login_check:
     pattern:   /login_check
-=======
-shop_lileya_homepage:
-    path:     /
-    defaults: { _controller: ShopLileyaBundle:Page:index }
-    requirements:
-        _method:  GET
-shop_lileya_about:
-    pattern:  /about
-    defaults: { _controller: ShopLileyaBundle:Page:about }
-    requirements:
-        _method:  GET
-shop_lileya_contact:
-    pattern:  /contact
-    defaults: { _controller: ShopLileyaBundle:Page:contact }
-    requirements:
-        _method:  GET|POST
->>>>>>> 1

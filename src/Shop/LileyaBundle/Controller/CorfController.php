@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use Shop\LileyaBundle\Entity\Repository;
 class CorfController extends Controller{
     public function addAction(){
-        //Ïîëó÷àåì POST ïåðåìåííûå
+        //Ð ÑŸÐ Ñ•Ð Â»Ð¡Ñ“Ð¡â€¡Ð Â°Ð ÂµÐ Ñ˜ POST Ð Ñ—Ð ÂµÐ¡Ð‚Ð ÂµÐ Ñ˜Ð ÂµÐ Ð…Ð Ð…Ð¡â€¹Ð Âµ
        $request = Request::createFromGlobals();
        $id= $request->request->get('id');
        $color=$request->request->get('color');
@@ -16,20 +16,19 @@ class CorfController extends Controller{
        $chashka=$request->request->get('chashka');
        $price=$request->request->get('price');
        $count=$request->request->get('count');
-       //Ïîëó÷àåì ñåñèîííûå ïåðåìåííûå
+       //Ð ÑŸÐ Ñ•Ð Â»Ð¡Ñ“Ð¡â€¡Ð Â°Ð ÂµÐ Ñ˜ Ð¡ÐƒÐ ÂµÐ¡ÐƒÐ Ñ‘Ð Ñ•Ð Ð…Ð Ð…Ð¡â€¹Ð Âµ Ð Ñ—Ð ÂµÐ¡Ð‚Ð ÂµÐ Ñ˜Ð ÂµÐ Ð…Ð Ð…Ð¡â€¹Ð Âµ
        $session = new Session();
        $sum=$session->get('sum');
        $coun=$session->get('coun');
        $product=$session->get('product');
-       if (!empty($product[$id])){//ïðîâåðÿåì åñòü ëè òàêîé òîâàð â êîðçèíå
-            $product[$id]['coun']+=$count;//äîáàâëÿåì êîëè÷åñòâî òîâàðà
+       if (!empty($product[$id])){//Ð Ñ—Ð¡Ð‚Ð Ñ•Ð Ð†Ð ÂµÐ¡Ð‚Ð¡ÐÐ ÂµÐ Ñ˜ Ð ÂµÐ¡ÐƒÐ¡â€šÐ¡ÐŠ Ð Â»Ð Ñ‘ Ð¡â€šÐ Â°Ð Ñ”Ð Ñ•Ð â„– Ð¡â€šÐ Ñ•Ð Ð†Ð Â°Ð¡Ð‚ Ð Ð† Ð Ñ”Ð Ñ•Ð¡Ð‚Ð Â·Ð Ñ‘Ð Ð…Ð Âµ
+            $product[$id]['coun']+=$count;//Ð Ò‘Ð Ñ•Ð Â±Ð Â°Ð Ð†Ð Â»Ð¡ÐÐ ÂµÐ Ñ˜ Ð Ñ”Ð Ñ•Ð Â»Ð Ñ‘Ð¡â€¡Ð ÂµÐ¡ÐƒÐ¡â€šÐ Ð†Ð Ñ• Ð¡â€šÐ Ñ•Ð Ð†Ð Â°Ð¡Ð‚Ð Â°
        }
        else{
 
-       //âû÷èñëÿåì êîëè÷åñòâî òîâàðîâ â è ñóììó â êîðçèíå
        $sum=$sum+($price*$count);
        $coun=$coun+$count;
-       //Çàïèñûâàåì ïåðåìåííûå â ñåñèþ
+       //Ð â€”Ð Â°Ð Ñ—Ð Ñ‘Ð¡ÐƒÐ¡â€¹Ð Ð†Ð Â°Ð ÂµÐ Ñ˜ Ð Ñ—Ð ÂµÐ¡Ð‚Ð ÂµÐ Ñ˜Ð ÂµÐ Ð…Ð Ð…Ð¡â€¹Ð Âµ Ð Ð† Ð¡ÐƒÐ ÂµÐ¡ÐƒÐ Ñ‘Ð¡Ð‹
        $session->set('sum',$sum);
        $session->set('coun',$coun);
        $session->set('product',$product);
@@ -42,8 +41,8 @@ class CorfController extends Controller{
     public function viewAction(){
         $session = new Session();
 
+        $product=$session->get('product');
             return $this->render('ShopLileyaBundle:Corf:show.html.twig', array(
-            'products' => $products,
-            'prod'=>$prod));
+            'products' => $product));
     }
     }
