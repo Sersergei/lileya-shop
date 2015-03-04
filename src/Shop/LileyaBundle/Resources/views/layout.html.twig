@@ -6,13 +6,14 @@
 {% block corf %}
     
     <div id="corf">
-    {% if app.session.get('product')%}
+    {% if app.session.get('sum') %}
     В <a href="{{path('ShopLileyaBundle_corf_view')}}">корзине</a><span id="count">{{ app.session.get('coun')}}</span> товар(а)<br />
     На сумму <span id="sum">
    {{ app.session.get('sum') }}
 </span>грн.
 {% else %}
 В вашей корзине пока нету товаров
+{{ app.session.get('sum') }}
 {% endif %}
     </div>
     
